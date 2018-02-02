@@ -490,7 +490,11 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
 
                     // we refresh input model as well
                     var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];
-                    $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];
+
+                    // below is a trouble-maker.
+                    // When clicking item after filter search sometimes some other items are checked as well
+                    // it happens because prepareGrouping() is calling all the time and oryginal id-s are being changed
+                    // $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];
                     $scope.groups.expandGroup(item.groupMenuId, true);
                 }
 
