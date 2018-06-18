@@ -369,6 +369,12 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                         return false;
                     }
 
+                    // if groupOnlyExpand property is  set, do nothing
+                    if ( !!attrs.groupOnlyExpand ) {
+                        $scope.groups.expandGroup(item.name,null,true);
+                        return;
+                    }
+
                     var i,j,k;
                     var startIndex = 0;
                     var endIndex = $scope.filteredModel.length - 1;
