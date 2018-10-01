@@ -204,7 +204,7 @@
     display: block;
     padding: 3px;
     color: #444;
-    white-space: nowrap;
+    white-space: normal;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
